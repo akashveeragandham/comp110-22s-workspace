@@ -1,6 +1,6 @@
 """EX02 - One Shot Wordle."""
 
-___author___ = "730425241"
+__author__ = "730425241"
 
 secret: str = "python"
 WHITE_BOX: str = "\U00002B1C"
@@ -13,7 +13,7 @@ r: str = ""
 
 while playing:
     if len(guess) != 6:
-        guess: str = input("That was not 6 letters! Try again: ")
+        guess = input("That was not 6 letters! Try again: ")
     elif guess == secret:
         while i < len(guess):
             if guess[i] == secret[i]:
