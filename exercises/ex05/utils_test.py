@@ -40,12 +40,20 @@ def test_sub_empty_list() -> None:
     assert sub(a_list, start_index, end_index) == []
 
 
-def test_sub_large_start_index() -> None:
-    """Test of function sub if given indexes are larger than length of list."""
-    a_list: list[int] = [1, 2, 3, 4, 5]
-    start_index = 5
-    end_index = 5
+def test_sub_start_index_equals_length() -> None:
+    """Test of function sub id start index equals length of given list."""
+    a_list: list[int] = [1, 2, 3]
+    start_index = 3
+    end_index = 3
     assert sub(a_list, start_index, end_index) == []
+
+
+def test_sub_large_start_index() -> None:
+    """Test of function sub if end index is larger than length of list."""
+    a_list: list[int] = [1, 2, 3, 4, 5]
+    start_index = 3
+    end_index = 7
+    assert sub(a_list, start_index, end_index) == [4, 5]
 
 
 def test_sub_negative_index() -> None:
