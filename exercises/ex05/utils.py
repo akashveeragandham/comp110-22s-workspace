@@ -18,9 +18,11 @@ def sub(a_list: list[int], start_index: int, end_index: int) -> list[int]:
     """Given a list of integers as well as a start and end index, will return a subset of given list."""
     subset: list[int] = list()
     i: int = start_index
-    while i < end_index:
-        subset.append(a_list[i])
-        i += 1
+    if len(a_list) >= 1:
+        while i < end_index:
+            if i >= 0:
+                subset.append(a_list[i])
+            i += 1
     return subset
 
 

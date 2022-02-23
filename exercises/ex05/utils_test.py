@@ -32,20 +32,28 @@ def test_sub() -> None:
     assert sub(a_list, start_index, end_index) == [20, 30]
 
 
-def test_sub_larger_sub() -> None:
-    """Test of function sub for a subset greater than one additional element."""
-    a_list: list[int] = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+def test_sub_empty_list() -> None:
+    """Test of function sub for a empty list."""
+    a_list: list[int] = []
     start_index = 1
-    end_index = 9
-    assert sub(a_list, start_index, end_index) == [10, 15, 20, 25, 30, 35, 40, 45]
-
-
-def test_sub_empty() -> None:
-    """Test of function sub if given indexes will produce an empty list."""
-    a_list: list[int] = [1, 2, 3, 4, 5]
-    start_index = 2
     end_index = 2
     assert sub(a_list, start_index, end_index) == []
+
+
+def test_sub_large_start_index() -> None:
+    """Test of function sub if given indexes are larger than length of list."""
+    a_list: list[int] = [1, 2, 3, 4, 5]
+    start_index = 5
+    end_index = 5
+    assert sub(a_list, start_index, end_index) == []
+
+
+def test_sub_negative_index() -> None:
+    """Test of function sub if given start index is negative."""
+    a_list: list[int] = [1, 2, 3, 4]
+    start_index = -1
+    end_index = 3
+    assert sub(a_list, start_index, end_index) == [1, 2, 3]
 
 
 def test_concat() -> None:
